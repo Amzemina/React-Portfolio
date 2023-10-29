@@ -1,3 +1,7 @@
 .header {
     background-color: rgb(142, 89, 98);
 }
+
+.header h1 {
+    margin-top: 0;
+}
