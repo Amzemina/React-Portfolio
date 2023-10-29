@@ -22,6 +22,9 @@ function Contact() {
         } else if (!isValidEmail(formState.email)) {
             errors.email = 'Invalid email address';
         }
+        if (!formState.message.trim()) {
+            errors.message = 'Message is required';
+        }
         setErrors(errors);
         return Object.keys(errors).length === 0;
     };
@@ -76,6 +79,7 @@ function Contact() {
                         onChange={handleChange}
                         rows="5"
                     />
+                    {errors.name && <p className="error">{errors.message}</p>}
                 </div>
                 <button className="submit-button" type="submit">
                     Submit
