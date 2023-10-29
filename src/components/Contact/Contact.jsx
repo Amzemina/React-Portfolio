@@ -26,22 +26,25 @@ function Contact() {
                 <div className="contact-form">
                     <input
                         type="text"
+                        name="name"
+                        placeholder='Name'
                         value={name}
                         onChange={handleChange}
-                        name="name"
                     />
                 </div>
                 <div className="contact-form">
                     <input
                         type="email"
-                        value={email}
                         name="email"
+                        placeholder='Email'
+                        value={email}
                         onChange={handleChange}
                     />
                 </div>
                 <div className="contact-form">
                     <textarea
                         name="message"
+                        placeholder='Message'
                         value={message}
                         onChange={handleChange}
                         rows="5"

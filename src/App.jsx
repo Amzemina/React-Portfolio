@@ -1,7 +1,7 @@
 import './App.css'
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import Header from './components/Header/Header';
+import Header from './components/Header/Header';
 import AboutMe from './components/AboutMe/AboutMe';
 // import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './components/Contact/Contact';
@@ -11,7 +11,7 @@ import Contact from './components/Contact/Contact';
 function App() {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<AboutMe />} />
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
