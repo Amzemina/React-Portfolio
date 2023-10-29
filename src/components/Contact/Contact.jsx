@@ -51,8 +51,8 @@ function Contact() {
         <section>
             <h1>Contact me</h1>
 
-            <form onSubmit={handleSubmit}>
-                <div className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-group">
                     <input
                         type="text"
                         name="name"
@@ -62,7 +62,7 @@ function Contact() {
                     />
                     {errors.name && <p className="error">{errors.name}</p>}
                 </div>
-                <div className="contact-form">
+                <div className="form-group">
                     <input
                         type="email"
                         name="email"
@@ -72,7 +72,7 @@ function Contact() {
                     />
                     {errors.name && <p className="error">{errors.email}</p>}
                 </div>
-                <div className="contact-form">
+                <div className="form-group">
                     <textarea
                         name="message"
                         placeholder='Message'
