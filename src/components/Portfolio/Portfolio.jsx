@@ -6,7 +6,7 @@ import './Portfolio.css';
 
 function Portfolio() {
     return (
-      <div>
+      <div className="portfolio">
         <h1>Portfolio</h1>
         <div className="img-container">
           <div className="img-card">

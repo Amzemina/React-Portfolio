@@ -3,7 +3,7 @@ import "./Resume.css"
 
 function Resume() {
     return (
-        <div>
+        <div className="resume">
             <div>
                 <h2>Download my resume:</h2>
                 <a href={resumePDF} download>

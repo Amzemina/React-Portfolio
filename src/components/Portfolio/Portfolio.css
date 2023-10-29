@@ -8,3 +8,11 @@
   .img-card img {
     width: 100%;
   }
+
+  @media screen and (max-width: 768px) {
+    .img-container {
+      grid-template-columns: 1fr; 
+      grid-template-rows: auto; 
+      grid-gap: 10px; 
+    }
+  }

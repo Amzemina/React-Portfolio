@@ -2,7 +2,7 @@ import "./Footer.css"
 
 function footer() {
     return (
-        <footer>
+        <footer className="footer">
             <ul>
                 <li>
                     <a href="https://github.com/Amzemina">GitHub</a>

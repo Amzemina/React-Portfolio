@@ -3,11 +3,11 @@ import "./Header.css"
 
 function Header() {
     return (
-        <header>
+        <header className="header">
             <h1>Ashley Zemina</h1>
 
             <nav>
-                <ul className="nav-bar">
+                <ul>
                     <li>
                         <Link to="/">
                             About Me
