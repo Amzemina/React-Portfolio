@@ -5,3 +5,10 @@
     border: 2px solid #fff;
     box-shadow: 0 0 0 2px #fff;
   }
+
+  .aboutMe p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+    padding: 10px;
+  }
