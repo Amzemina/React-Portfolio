@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import "./Contact.css"
 
 function Contact() {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
     const [errors, setErrors] = useState({});
+    const [formIsValid, setFormIsValid] = useState({
+        name: true,
+        email: true,
+        message: true,
+    });
+    const formRef = useRef(null);
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -13,21 +20,26 @@ function Contact() {
         }));
     }
 
-    const validateForm = () => {
+    const handleBlur = (field) => {
+        let isValid;
         const errors = {};
-        if (!formState.name.trim()) {
-            errors.name = 'Name is required';
+        switch (field) {
+            case 'email':
+                isValid = isValidEmail(formState[field]);
+                setFormIsValid({ ...formIsValid, [field]: isValid });
+                if (!formState.email.trim()) {
+                    errors.email = 'Email is required';
+                } else if (!isValid) {
+                    errors.email = 'Invalid email address';
+                }
+                setErrors(errors);
+                break;
+            default:
+                isValid = formState[field].trim() !== '';
+                setFormIsValid({ ...formIsValid, [field]: isValid });
+               
+                break;
         }
-        if (!formState.email.trim()) {
-            errors.email = 'Email is required';
-        } else if (!isValidEmail(formState.email)) {
-            errors.email = 'Invalid email address';
-        }
-        if (!formState.message.trim()) {
-            errors.message = 'Message is required';
-        }
-        setErrors(errors);
-        return Object.keys(errors).length === 0;
     };
 
     const isValidEmail = (email) => {
@@ -38,20 +50,15 @@ function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formState);
-        if (validateForm()) {
-            console.log('Valid');
-        } else {
-            console.log('Invalid');
-        }
+    };
 
-    }
     const { name, email, message } = formState;
 
     return (
         <section>
             <h1>Contact me</h1>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" onSubmit={handleSubmit} ref={formRef}>
                 <div className="form-group">
                     <input
                         type="text"
@@ -59,8 +66,9 @@ function Contact() {
                         placeholder='Name'
                         value={name}
                         onChange={handleChange}
+                        onBlur={() => handleBlur("name")}
                     />
-                    {errors.name && <p className="error">{errors.name}</p>}
+                    {formIsValid.name === false && <p className="error">name is required</p>}
                 </div>
                 <div className="form-group">
                     <input
@@ -69,8 +77,9 @@ function Contact() {
                         placeholder='Email'
                         value={email}
                         onChange={handleChange}
+                        onBlur={() => handleBlur("email")}
                     />
-                    {errors.name && <p className="error">{errors.email}</p>}
+                    {errors.email && <p className="error">{errors.email}</p>}
                 </div>
                 <div className="form-group">
                     <textarea
@@ -78,9 +87,10 @@ function Contact() {
                         placeholder='Message'
                         value={message}
                         onChange={handleChange}
+                        onBlur={() => handleBlur("message")}
                         rows="5"
                     />
-                    {errors.message && <p className="error">{errors.message}</p>}
+                    {formIsValid.message === false && <p className="error">message is required</p>}
                 </div>
                 <button className="submit-button" type="submit">
                     Submit
