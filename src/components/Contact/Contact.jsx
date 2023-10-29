@@ -80,7 +80,7 @@ function Contact() {
                         onChange={handleChange}
                         rows="5"
                     />
-                    {errors.name && <p className="error">{errors.message}</p>}
+                    {errors.message && <p className="error">{errors.message}</p>}
                 </div>
                 <button className="submit-button" type="submit">
                     Submit
