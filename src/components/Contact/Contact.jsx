@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function Contact() {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-
+    const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -11,9 +11,34 @@ function Contact() {
             [name]: value,
         }));
     }
+
+    const validateForm = () => {
+        const errors = {};
+        if (!formState.name.trim()) {
+            errors.name = 'Name is required';
+        }
+        if (!formState.email.trim()) {
+            errors.email = 'Email is required';
+        } else if (!isValidEmail(formState.email)) {
+            errors.email = 'Invalid email address';
+        }
+        setErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+
+    const isValidEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formState);
+        if (validateForm()) {
+            console.log('Valid');
+        } else {
+            console.log('Invalid');
+        }
 
     }
     const { name, email, message } = formState;
@@ -31,6 +56,7 @@ function Contact() {
                         value={name}
                         onChange={handleChange}
                     />
+                    {errors.name && <p className="error">{errors.name}</p>}
                 </div>
                 <div className="contact-form">
                     <input
@@ -40,6 +66,7 @@ function Contact() {
                         value={email}
                         onChange={handleChange}
                     />
+                    {errors.name && <p className="error">{errors.email}</p>}
                 </div>
                 <div className="contact-form">
                     <textarea

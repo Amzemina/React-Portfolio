@@ -4,6 +4,7 @@ function AboutMe() {
   return (
     <div className="about-me">
       <h1>About Me</h1>
+      <img src="src/assets/PortfolioPic.jpg" alt="picture of ashley"></img>
       <p>
         I am a full stack web developer with a passion for learning and
         creating. I am a graduate of the UCONN Coding Bootcamp. I am proficient 

@@ -1,2 +1,10 @@
+function Portfolio() {
+  return (
+    <div>
+      <h1>Portfolio</h1>
+    </div>
 
-// import  { Link } from 'react-router-dom';
+  );
+}
+
+export default Portfolio;

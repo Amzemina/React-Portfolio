@@ -1,2 +1,10 @@
+function Resume() {
+    return (
+        <div>
+            <h1>Resume</h1>
+            <p></p>
+        </div>
+    );
+}
 
-// import  { Link } from 'react-router-dom';
+export default Resume;
