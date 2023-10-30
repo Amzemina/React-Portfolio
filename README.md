@@ -5,10 +5,10 @@ This personal portfolio was developed using React & Vite. The portfolio showcase
 The application also has an about me, downloadable resume and a contact page.
 
 ## Table of Contents
-Description(#Description)
-Installation(#installation)
-Usage(#Usage)
-Questions(#Questions)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Questions](#questions)
 
 ## Installation
 Clone the repo locally and run npm i.
