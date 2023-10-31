@@ -18,6 +18,9 @@ Live Deployed Site here:
 
 https://cute-chaja-af3856.netlify.app/
 
+[Untitled_ Oct 30 2023 9_29 PM.webm](https://github.com/Amzemina/React-Portfolio/assets/128834562/f715c30f-1df6-4d33-9085-fa49bfa3aae4)
+
+
 
 ## Questions
 For more questions, feel free to contact me at my GitHub: https://github.com/amzemina
