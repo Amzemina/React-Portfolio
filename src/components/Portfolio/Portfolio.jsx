@@ -3,7 +3,7 @@
 //portfolio stylesheet
 import './Portfolio.css';
 //project component
-import Project from '../Project/project';
+import Project from '../Project/Project';
 //project data
 import projects from '../../projectData/Projects.js';
 
