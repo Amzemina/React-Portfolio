@@ -1,4 +1,8 @@
+//Resume component
+
+//resume pdf
 import resumePDF from '../../assets/resume.pdf';
+//resume stylesheet
 import "./Resume.css"
 
 function Resume() {

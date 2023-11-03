@@ -1,3 +1,6 @@
+//Footer component
+
+//footer stylesheet
 import "./Footer.css"
 
 function footer() {

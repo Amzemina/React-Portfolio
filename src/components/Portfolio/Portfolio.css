@@ -4,9 +4,16 @@
     grid-template-columns: 1fr 1fr 1fr; 
     grid-template-rows: auto; 
     grid-gap: 10px; 
+    margin: 0px 10px;
   }
   .img-card img {
     width: 100%;
+  }
+
+  .img-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   @media screen and (max-width: 768px) {
@@ -14,5 +21,8 @@
       grid-template-columns: 1fr; 
       grid-template-rows: auto; 
       grid-gap: 10px; 
+    }
+    .img-card {
+      margin: 0px 10px;
     }
   }

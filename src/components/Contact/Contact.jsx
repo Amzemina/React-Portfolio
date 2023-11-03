@@ -1,6 +1,11 @@
+//Contact component
+
+
 import { useState, useRef } from 'react';
+//contact stylesheet
 import "./Contact.css"
 
+//contact form
 function Contact() {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
     const [errors, setErrors] = useState({});
@@ -11,7 +16,7 @@ function Contact() {
     });
     const formRef = useRef(null);
 
-
+    //handle form input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormState((prevState) => ({
@@ -19,7 +24,7 @@ function Contact() {
             [name]: value,
         }));
     }
-
+    //validate form fields
     const handleBlur = (field) => {
         let isValid;
         const errors = {};
@@ -41,17 +46,17 @@ function Contact() {
                 break;
         }
     };
-
+    //validate email
     const isValidEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     };
-
+    //submit form
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formState);
     };
-
+    //destructure formState
     const { name, email, message } = formState;
 
     return (

@@ -1,3 +1,6 @@
+// About me component
+
+// about me stylesheet
 import "./AboutMe.css";
 import PortfolioPic from "../../assets/PortfolioPic.jpg";
 
